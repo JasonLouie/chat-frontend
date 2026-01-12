@@ -1,18 +1,24 @@
 <div class="form-group">
-    <label [for]="label">{{ label }}</label>
-    
-    <input 
-      [id]="label"
-      [type]="type" 
-      [formControl]="control" 
-      [class.error]="errorMessages.length > 0"
-    >
-  
-    @if (errorMessages.length > 0) {
-      <div class="error-container">
-        @for (msg of errorMessages; track msg) {
-          <small class="error-msg">{{ msg }}</small>
-        }
-      </div>
+  <label [attr.for]="name">
+    {{ label }}
+    @if (isRequired) {
+    <span class="required-star">*</span>
+    }
+  </label>
+
+  <input
+    [attr.id]="name"
+    [attr.name]="name"
+    [type]="type"
+    [formControl]="control"
+    [class.error]="errorMessages.length > 0"
+  />
+
+  @if (errorMessages.length > 0) {
+  <div class="error-container">
+    @for (msg of errorMessages; track msg) {
+    <small class="error-msg">{{ msg }}</small>
     }
   </div>
+  }
+</div>

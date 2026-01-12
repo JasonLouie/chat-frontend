@@ -11,7 +11,9 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 export class TextInputComponent {
     @Input({ required: true }) control!: FormControl;
     @Input() label: string = "";
+    @Input({ required: true }) name!: string;
     @Input() type: "text" | "email" | "number" = "text";
+    @Input() isRequired: boolean = false;
 
     @Input() customErrors: Record<string, string> = {};
 

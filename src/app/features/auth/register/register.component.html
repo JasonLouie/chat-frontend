@@ -1,35 +1,35 @@
 <div class="register-container">
-    <h2>Sign Up</h2>
+  <h2>Sign Up</h2>
 
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <app-text-input
-            label="Email"
-            type="email"
-            [control]="emailControl"
-            [customErrors]="emailErrors"
-        ></app-text-input>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <app-text-input
+      name="email"
+      label="Email"
+      type="email"
+      [control]="emailControl"
+      [customErrors]="emailErrors"
+      [isRequired]="true"
+    ></app-text-input>
 
-        <app-text-input
-            label="Display Name"
-            [control]="displayNameControl"
-            [customErrors]="displayNameErrors"
-        ></app-text-input>
+    <app-text-input
+      name="displayName"
+      label="Display Name"
+      [control]="displayNameControl"
+      [customErrors]="displayNameErrors"
+    ></app-text-input>
 
-        <app-text-input
-            label="Username"
-            [control]="usernameControl"
-            [customErrors]="usernameErrors"
-        ></app-text-input>
+    <app-text-input
+      name="username"
+      label="Username"
+      [control]="usernameControl"
+      [customErrors]="usernameErrors"
+      [isRequired]="true"
+    ></app-text-input>
 
-        <app-password-input
-            [control]="passwordControl"
-            label="Password"
-        ></app-password-input>
+    <app-password-input [control]="passwordControl" label="Password"></app-password-input>
 
-        <button type="submit">Sign Up</button>
-    </form>
+    <button type="submit">Sign Up</button>
+  </form>
 
-    <p class="footer-text">
-        Already have an account? <a routerLink="/login">Log in</a>
-    </p>
+  <p class="footer-text">Already have an account? <a routerLink="/login">Log in</a></p>
 </div>

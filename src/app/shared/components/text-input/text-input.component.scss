@@ -1,0 +1,8 @@
+@use "../../styles/form-styles" as forms;
+
+@include forms.base-form-styles;
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+}
